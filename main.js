@@ -128,7 +128,7 @@ function getSelection() {
         return Promise.resolve(randomRange(3));
     }
     return new Promise((res) => {
-        playBtn.addEventListener("click", _ => res(randomRange(3)));
+        playBtn.addEventListener("click", _ => res(randomRange(3)), { once: true });
 
         doorsEle.forEach((v, i) => v.addEventListener("click", _ => {
             if(canSelect) { selectDoor(i); res(i); }
